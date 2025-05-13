@@ -47,13 +47,13 @@
                     <h3>Our Founders</h3>
                     <div class="founder-grid">
                         <div class="founder-card">
-                            <img src="Prasanna.jpg" alt="Prasanna Batala - Founder">
+                            <img src="Prasanna.jpg" alt="Prasanna Batala">
                             <h4>Prasanna Batala</h4>
                             <p class="founder-title">Founder & Music Director</p>
                             <p class="founder-description">A prodigious talent who began his musical journey at a young age, Prasanna has mastered both vocal performance and multiple musical instruments. His dedication to music and natural talent have made him a respected figure in the music community. His passion for teaching and sharing musical knowledge has inspired countless aspiring musicians.</p>
                         </div>
                         <div class="founder-card">
-                            <img src="Hitesh.jpg" alt="Hitesh Bikram Shah - Founder">
+                            <img src="Hitesh.jpg" alt="Hitesh Bikram Shah">
                             <h4>Hitesh Bikram Shah</h4>
                             <p class="founder-title">Co-Founder & Creative Director</p>
                             <p class="founder-description">A visionary in the music industry, Hitesh brings innovative ideas and creative direction to Melody Makers. His expertise in music production and event management has been instrumental in creating memorable musical experiences. His leadership and dedication have helped shape the organization into a thriving community for music enthusiasts.</p>
@@ -83,30 +83,26 @@
         <section id="events" class="events">
             <h2>Upcoming Events</h2>
             <div class="event-grid">
-                <!-- Event cards will be dynamically added here -->
             </div>
         </section>
 
         <section id="gallery" class="gallery">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <!-- Gallery images will be dynamically added here -->
             </div>
         </section>
 
         <section id="contact" class="contact">
             <h2>Contact Us</h2>
             <div class="contact-container">
-                <form id="contact-form" action="https://formsubmit.co/melodymakers466@gmail.com" method="POST">
+                <form id="contact-form" action="https://formsubmit.co/el/verify" method="POST">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" placeholder="Message" required></textarea>
-                    <!-- Honeypot to prevent spam -->
-                    <input type="text" name="_honey" style="display:none">
-                    <!-- Disable Captcha -->
+                    <input type="hidden" name="_next" value="https://melodymakers466.github.io/thanks.html">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
                     <input type="hidden" name="_captcha" value="false">
-                    <!-- Specify redirect after submission -->
-                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <input type="hidden" name="_template" value="table">
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
                 <div class="contact-info">
@@ -118,10 +114,6 @@
                         <i class="fas fa-phone"></i>
                         <p>+977 9769934870</p>
                     </div>
-                    <!-- <div class="info-item">
-                        <i class="fas fa-location-dot"></i>
-                        <p>123 Music Street, Melody City</p>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -148,7 +140,6 @@
         </div>
     </footer>
 
-    <!-- Event Modal -->
     <div id="eventModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
