@@ -36,7 +36,12 @@ body {
 
 .logo img {
     height: 50px;
-    width: auto;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary-color);
+    padding: 2px;
+    background-color: var(--white);
 }
 
 .nav-links {
@@ -59,15 +64,30 @@ body {
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
     cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
 }
 
 .hamburger span {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background-color: var(--primary-color);
     transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -170,9 +190,11 @@ section h2 {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: 1.5rem;
     border: 3px solid var(--secondary-color);
+    background-color: var(--white);
+    padding: 5px;
 }
 
 .founder-card h4 {
@@ -210,6 +232,10 @@ section h2 {
     background-color: var(--light-bg);
     border-radius: 10px;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .feature:hover {
@@ -219,7 +245,24 @@ section h2 {
 .feature i {
     font-size: 2.5rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover i {
+    transform: scale(1.1);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 /* Events Section */
@@ -232,8 +275,34 @@ section h2 {
 /* Gallery Section */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
 }
 
 /* Contact Section */
@@ -315,25 +384,103 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) {
+    section {
+        padding: 4rem 8%;
+    }
+
+    .founder-card {
+        max-width: 320px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991px) {
+    section {
+        padding: 3.5rem 6%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .founder-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .feature {
+        padding: 1.8rem;
+    }
+
+    .feature i {
+        font-size: 2.2rem;
+    }
+
+    .feature h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
+    .logo img {
+        height: 40px;
+        width: 40px;
     }
 
     .hamburger {
         display: flex;
     }
 
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    .contact-container {
-        grid-template-columns: 1fr;
+    .hero p {
+        font-size: 1.2rem;
     }
 
     section {
         padding: 3rem 5%;
+    }
+
+    .founder-grid {
+        grid-template-columns: 1fr;
     }
 
     .founder-card {
@@ -346,8 +493,192 @@ footer {
         height: 180px;
     }
 
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .gallery-item {
+        aspect-ratio: 1;
+    }
+
+    .feature {
+        padding: 1.5rem;
+    }
+
+    .feature i {
+        font-size: 2rem;
+    }
+
+    .feature h3 {
+        font-size: 1.2rem;
+    }
+
+    .feature p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .logo img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .hamburger span {
+        width: 25px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .founders h3 {
+        font-size: 1.8rem;
+    }
+
+    .founder-card {
+        max-width: 280px;
+        padding: 1.2rem;
+    }
+
+    .founder-card img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .founder-card h4 {
+        font-size: 1.3rem;
+    }
+
+    .founder-title {
+        font-size: 1rem;
+    }
+
     .founder-description {
         font-size: 0.9rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        aspect-ratio: 16/9;
+    }
+
+    .feature {
+        padding: 1.2rem;
+    }
+
+    .feature i {
+        font-size: 1.8rem;
+    }
+
+    .feature h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature p {
+        font-size: 0.85rem;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+    }
+
+    .event-info {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .event-images img {
+        height: 180px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* For very small devices (less than 400px) */
+@media (max-width: 399px) {
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .founder-card {
+        max-width: 260px;
+        padding: 1rem;
+    }
+
+    .founder-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 0.9rem;
+    }
+
+    .gallery-grid {
+        gap: 0.8rem;
+    }
+
+    .gallery-item {
+        aspect-ratio: 4/3;
+    }
+
+    .feature {
+        padding: 1rem;
+    }
+
+    .feature i {
+        font-size: 1.6rem;
+    }
+
+    .feature h3 {
+        font-size: 1rem;
+    }
+
+    .feature p {
+        font-size: 0.8rem;
     }
 }
 
