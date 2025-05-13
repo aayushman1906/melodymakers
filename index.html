@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Makers - Music Organization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.jpg" alt="Melody Makers Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Melody Makers</h1>
+                <p>Where Music Comes Alive</p>
+                <a href="#about" class="cta-button">Learn More</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Melody Makers is a vibrant music organization dedicated to fostering musical talent and creating unforgettable experiences. We bring together musicians, artists, and music enthusiasts in a celebration of creativity and harmony.</p>
+                </div>
+                <div class="founders">
+                    <h3>Our Founders</h3>
+                    <div class="founder-grid">
+                        <div class="founder-card">
+                            <img src="Prasanna.jpg" alt="Prasanna Batala - Founder">
+                            <h4>Prasanna Batala</h4>
+                            <p class="founder-title">Founder & Music Director</p>
+                            <p class="founder-description">A prodigious talent who began his musical journey at a young age, Prasanna has mastered both vocal performance and multiple musical instruments. His dedication to music and natural talent have made him a respected figure in the music community. His passion for teaching and sharing musical knowledge has inspired countless aspiring musicians.</p>
+                        </div>
+                        <div class="founder-card">
+                            <img src="Hitesh.jpg" alt="Hitesh Bikram Shah - Founder">
+                            <h4>Hitesh Bikram Shah</h4>
+                            <p class="founder-title">Co-Founder & Creative Director</p>
+                            <p class="founder-description">A visionary in the music industry, Hitesh brings innovative ideas and creative direction to Melody Makers. His expertise in music production and event management has been instrumental in creating memorable musical experiences. His leadership and dedication have helped shape the organization into a thriving community for music enthusiasts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-music"></i>
+                        <h3>Music Education</h3>
+                        <p>Professional training and workshops</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>Join our growing music community</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Events</h3>
+                        <p>Regular performances and concerts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-grid">
+                <!-- Event cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Gallery images will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <form id="contact-form" action="https://formsubmit.co/melodymakers466@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <!-- Honeypot to prevent spam -->
+                    <input type="text" name="_honey" style="display:none">
+                    <!-- Disable Captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Specify redirect after submission -->
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>melodymakers466@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+977 9769934870</p>
+                    </div>
+                    <!-- <div class="info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <p>123 Music Street, Melody City</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Melody Makers</h3>
+                <p>Creating harmony through music</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/melodymakers466"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Melody Makers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="event-images">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Music Festival">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Music Festival">
+                </div>
+                <div class="event-details">
+                    <h2>Music Festival</h2>
+                    <div class="event-info">
+                        <p><i class="far fa-calendar"></i> Jeth 31, 2081</p>
+                        <p><i class="fas fa-map-marker-alt"></i> City Hall - Tikapur, Kailali</p>
+                    </div>
+                    <div class="event-description">
+                        <p>Join us for a day of amazing music performances and workshops. Experience the magic of live music with talented artists from across the region.</p>
+                    </div>
+                    <div class="organizers">
+                        <h3>Organized By</h3>
+                        <div class="organizer-cards">
+                            <div class="organizer-card">
+                                <img src="Prasanna.jpg" alt="Prasanna Batala">
+                                <h4>Prasanna Batala</h4>
+                                <p class="organizer-title">Founder & Music Director</p>
+                                <p class="organizer-description">A prodigious talent who began his musical journey at a young age, Prasanna has mastered both vocal performance and multiple musical instruments. His dedication to music and natural talent have made him a respected figure in the music community. His passion for teaching and sharing musical knowledge has inspired countless aspiring musicians.</p>
+                            </div>
+                            <div class="organizer-card">
+                                <img src="Hitesh.jpg" alt="Hitesh Bikram Shah">
+                                <h4>Hitesh Bikram Shah</h4>
+                                <p class="organizer-title">Co-Founder & Creative Director</p>
+                                <p class="organizer-description">A visionary in the music industry, Hitesh brings innovative ideas and creative direction to Melody Makers. His expertise in music production and event management has been instrumental in creating memorable musical experiences. His leadership and dedication have helped shape the organization into a thriving community for music enthusiasts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
