@@ -247,24 +247,49 @@ section h2 {
     transition: transform 0.3s ease;
     width: 100%;
     max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.member-card:hover {
-    transform: translateY(-5px);
+.member-image-bg {
+    background: #ffc800;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.member-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background: none;
 }
 
 .member-card h4 {
-    color: var(--primary-color);
+    color: #111;
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
     text-align: center;
+    text-transform: none;
 }
 
 .member-title {
-    color: var(--secondary-color);
-    font-size: 1rem;
-    font-weight: 600;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-align: center;
+    margin-bottom: 0.2rem;
+    text-transform: none;
 }
 
 .features {
