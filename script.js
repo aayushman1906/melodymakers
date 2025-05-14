@@ -40,7 +40,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const events = [
     {
         title: 'Music Festival',
-        date: 'Jeth 31, 2081',
+        date: 'Jeth 31, 2082',
         location: 'City Hall - Tikapur, Kailali',
         description: 'Join us for a day of amazing music performances and workshops.'
     }
